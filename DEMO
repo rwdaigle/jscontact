@@ -1,0 +1,30 @@
+# Local
+
+bundle install
+rake db:migrate 
+
+# Demo
+
+## Create
+
+heroku create ryancontact
+git push heroku master
+
+## Extend and Introspect
+
+heroku addons:add memcache:5mb pgbackups:basic
+heroku pgbackups:capture
+
+heroku addons:upgrade logging:advanced
+heroku logs --tail
+
+## Scale
+
+heroku dynos +2
+heroku ps
+heroku dynos 1
+
+## Baby steps:
+#
+# Show online scale slider
+# Show addon page & add buttons
