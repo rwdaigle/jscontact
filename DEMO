@@ -28,6 +28,11 @@ heroku pgbackups **
 
 heroku logs
 
+## Redeploy
+
+touch DEMO
+git push heroku master
+
 ## Baby steps:
 #
 # Show online scale slider
