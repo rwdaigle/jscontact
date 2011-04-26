@@ -9,20 +9,24 @@ rake db:migrate
 
 heroku create ryancontact
 git push heroku master
-
-## Extend and Introspect
-
-heroku addons:add memcache:5mb pgbackups:basic
-heroku pgbackups:capture
-
-heroku addons:upgrade logging:advanced
-heroku logs --tail
+heroku rake db:migrate
 
 ## Scale
 
-heroku dynos +2
+heroku ps
+heroku dynos +10
 heroku ps
 heroku dynos 1
+
+## Extend and Introspect
+
+heroku addons:add memcache:5mb 
+
+heroku addons:add pgbackups:basic
+heroku pgbackups:capture
+heroku pgbackups **
+
+heroku logs
 
 ## Baby steps:
 #
