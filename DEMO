@@ -31,6 +31,7 @@ heroku logs
 ## Redeploy
 
 touch DEMO
+git commit -a -m "Test commit"
 git push heroku master
 
 ## Baby steps:
