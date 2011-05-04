@@ -24,7 +24,7 @@ heroku addons:add memcache:5mb
 
 heroku addons:add pgbackups:basic
 heroku pgbackups:capture
-heroku pgbackups **
+heroku pgbackups:url
 
 heroku logs
 
